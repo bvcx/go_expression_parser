@@ -3,7 +3,7 @@ package go_sat_solver
 import "testing"
 
 
-func TestPrint(t *testing.T) {
+func TestChildrenCount(t *testing.T) {
 	cases := []struct {
 		expr Expr
 		want int
@@ -18,7 +18,7 @@ func TestPrint(t *testing.T) {
 	for _, c := range cases {
 		got := len(c.expr.Children())
 		if got != c.want {
-			t.Errorf("Children(%#v).len == %v, want %v", c.expr, got, c.want)
+			t.Errorf("len(Children(%#v)) == %v, want %v", c.expr, got, c.want)
 		}
 	}
 }
