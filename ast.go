@@ -26,10 +26,10 @@ type Literal struct {
 	value bool
 }
 
-func (e And) Children() []Expr { return e.clauses }
-func (e Or) Children() []Expr { return e.clauses }
-func (e Not) Children() []Expr { return e.child[:] }
-func (e Symbol) Children() []Expr { return nil }
+func (e And) Children() []Expr     { return e.clauses }
+func (e Or) Children() []Expr      { return e.clauses }
+func (e Not) Children() []Expr     { return e.child[:] }
+func (e Symbol) Children() []Expr  { return nil }
 func (e Literal) Children() []Expr { return nil }
 
 func toExpr(o interface{}) (r Expr, ok bool) {
